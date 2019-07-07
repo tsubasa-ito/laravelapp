@@ -1,6 +1,6 @@
-<html>
+{{-- <html>
 <head>
-<title>Hello/Index</title>
+<title>Blade/Index</title>
 <style>
     body {
     font-size: 16pt;
@@ -17,11 +17,38 @@
 </head>
 <body>
     <h1>Blade/Index</h1>
-    <p>{{$msg}}</p>
+    @isset ($msg)
+    <p>こんにちは。{{ $msg }}さん。</p>
+    @else
+    <p>何か描いてください。</p>
+    @endisset
+
     <form method= "POST" action="/hello">
         {{ csrf_field() }}
         <input type="text" name="msg">
         <input type="submit">
     </form>
 </body>
-</html>
+</html> --}}
+
+@extends('layout.helloapp')
+
+@section('title', 'Index')
+
+@section('menubar')
+    @parent
+    indexpage
+@endsection
+
+@section('content')
+    <p>this is content</p>
+    <p>many contents OK</p>
+
+    <ul>
+    @each('components.item', $data, 'item')
+    </ul>
+@endsection
+
+@section('footer')
+    copyright 2019 tsubasa
+@endsection
