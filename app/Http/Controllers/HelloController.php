@@ -8,15 +8,10 @@ use Illuminate\Http\Response;
 class HelloController extends Controller
 {
     public function index(){
-        $data = [
-            ['name'=>'tsubasa', 'mail'=>'tsubasa@yahoo'],
-            ['name'=>'sakamoto', 'mail'=>'sakamoto@yahoo'],
-            ['name'=>'kawasaki', 'mail'=>'kawasaki@yahoo']
-        ];
-        return view('hello.index', ['data'=>$data]);
+        return view('hello.index', ['message'=>'Hello!']);
     }
 
-    public function post(Request $request){
-        return view('hello.index', ['msg'=>$request->msg]);
-    }
+    // public function post(Request $request){
+    //     return view('hello.index', ['msg'=>$request->msg]);
+    // }
 }

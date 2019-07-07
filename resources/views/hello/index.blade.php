@@ -42,11 +42,8 @@
 
 @section('content')
     <p>this is content</p>
-    <p>many contents OK</p>
-
-    <ul>
-    @each('components.item', $data, 'item')
-    </ul>
+    <p>Controller value<br>『message』 = {{$message}}</p>
+    <p>ViewComposer value<br>『view_message』 = {{$view_message}}</p>
 @endsection
 
 @section('footer')
