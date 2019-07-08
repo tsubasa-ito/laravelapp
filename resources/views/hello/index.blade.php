@@ -42,8 +42,8 @@
 
 @section('content')
     <p>this is content</p>
-    <p>Controller value<br>『message』 = {{$message}}</p>
-    <p>ViewComposer value<br>『view_message』 = {{$view_message}}</p>
+    <p>This is <middleware>google.com</middleware> link!</p>
+    <p>This is <middleware>yahoo.co.jp</middleware> link!</p>
 @endsection
 
 @section('footer')
