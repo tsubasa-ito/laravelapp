@@ -13,11 +13,11 @@ class HelloRequest extends FormRequest
      */
     public function authorize()
     {
-        // if ($this->path() == 'hello') {
-        //     return true;
-        // }else{
-        //     return false;
-        // }
+        if ($this->path() == 'hello') {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -27,20 +27,20 @@ class HelloRequest extends FormRequest
      */
     public function rules()
     {
-        // return [
-        //     'name' => 'required',
-        //     'mail' => 'email',
-        //     'age' => 'numeric|between:0,150',
-        // ];
+        return [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|hello',
+        ];
     }
 
-    // public function messages()
-    // {
-    //     return [
-    //         'name.required' => '名前は必ず入力してください。',
-    //         'mail.email' => 'メールアドレスが必要です。',
-    //         'age.numeric' => '年齢を整数で記入してください。',
-    //         'age.between' => '年齢は0〜150の間で入力してください。',
-    //     ];
-    // }
+    public function messages()
+    {
+        return [
+            'name.required' => '名前は必ず入力してください。',
+            'mail.email' => 'メールアドレスが必要です。',
+            'age.numeric' => '年齢を整数で記入してください。',
+            'age.hello' => 'Hello! 入力は偶数のみ受け付けます。',
+        ];
+    }
 }
