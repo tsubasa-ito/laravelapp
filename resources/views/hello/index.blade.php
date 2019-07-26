@@ -1,5 +1,5 @@
 
-@extends('layout.helloapp')
+@extends('layouts.helloapp')
 
 @section('title', 'Index')
 

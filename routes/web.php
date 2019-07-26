@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Middleware\HelloMiddleware;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,5 @@ Route::get('hello', 'HelloController@index')
     ->middleware(HelloMiddleware::class);
 
 Route::post('hello', 'HelloController@post');
+Route::get('hello/add', 'HelloController@add');
+Route::post('hello/add', 'HelloController@create');
