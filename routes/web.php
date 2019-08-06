@@ -2,6 +2,8 @@
 
 use App\Http\Middleware\HelloMiddleware;
 use Illuminate\Support\Facades\Route;
+use Faker\Provider\ro_RO\Person;
+use App\Http\Controllers\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,7 @@ Route::post('hello/edit', 'HelloController@update');
 Route::get('hello/del', 'HelloController@del');
 Route::post('hello/del', 'HelloController@remove');
 Route::get('hello/show', 'HelloController@show');
+
+Route::get('person', 'PersonController@index');
+Route::get('person/find', 'PersonController@find');
+Route::POST('person/find', 'PersonController@search');
