@@ -35,3 +35,11 @@ Route::get('hello/show', 'HelloController@show');
 Route::get('person', 'PersonController@index');
 Route::get('person/find', 'PersonController@find');
 Route::POST('person/find', 'PersonController@search');
+Route::get('person/add', 'PersonController@add');
+Route::POST('person/add', 'PersonController@create');
+
+Route::get('person/edit', 'PersonController@edit');
+Route::post('person/edit', 'PersonController@update');
+
+Route::get('person/del', 'PersonController@delete');
+Route::post('person/del', 'PersonController@remove');
