@@ -24,4 +24,14 @@ class BoardController extends Controller
         $board->fill($form)->save();
         return redirect('/board');
     }
+
+    public function delete(Request $request){
+        $board = Board::find($request->id);
+        return view('board.del', ['form' => $board]);
+    }
+    public function remove(Request $request){
+        Board::find($request->id)->delete();
+        return redirect('/board');
+    }
+
 }
