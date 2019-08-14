@@ -10,11 +10,18 @@ class Person extends Model
 {
     protected $guarded = array('id');
 
+    public function getData(){
+        return $this->id . ': ' . $this->name . ' (' . $this->age . ') ';
+    }
     public static $rules = array(
         'name' => 'required',
         'mail' => 'email',
         'age' => 'integer | min:0 | max:150'
     );
+
+    public function boards(){
+        return $this->hasMany('App\Board');
+    }
 }
 
 
