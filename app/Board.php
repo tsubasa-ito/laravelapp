@@ -13,8 +13,12 @@ class Board extends Model
         'title' => 'required',
         'message' => 'required',
     );
+
+    public function person(){
+        return $this->belongsTo('App\Person');
+    }
     public function getData(){
-        return $this->id . ': ' . $this->title;
+        return $this->id . ': ' . $this->title . ' (' . $this->person->name . ') ' . $this->message;
     }
 
 }
