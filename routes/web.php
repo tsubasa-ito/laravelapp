@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 Route::get('hello', 'HelloController@index')
     // ->middleware('hello');
-    ->middleware(HelloMiddleware::class);
+    ->middleware('auth');
 
 Route::post('hello', 'HelloController@post');
 Route::get('hello/add', 'HelloController@add');
@@ -53,3 +53,10 @@ Route::get('board/del', 'BoardController@delete');
 Route::post('board/del', 'BoardController@remove');
 
 Route::resource('rest', 'RestappController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/hello/auth', 'HelloController@getAuth');
+Route::post('/hello/auth', 'HelloController@postAuth');
